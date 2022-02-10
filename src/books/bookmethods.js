@@ -12,10 +12,38 @@ exports.addBook = async (bookObject) => {
   }
 };
 
-exports.list = async () => {
+exports.listBooks = async () => {
   try {
-    const bookList = await Book.findAll();
+    let bookList = await Book.findAll();
     console.log(bookList);
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+exports.searchBooks = async (bookObject) => {
+  try {
+    searchCriteria = Object.entries(bookObject);
+    searchValue = [];
+    searchValue.push(searchCriteria[2]);
+    searchObj = Object.fromEntries(searchValue);
+    let searchResult = await Book.findAll({ where: searchObj });
+    console.log(searchResult);
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+exports.updateBook = async (argv) => {
+  try {
+
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+exports.deleteBook = async (argv) => {
+  try {
   } catch (error) {
     console.log(error);
   }
