@@ -7,7 +7,7 @@ const Book = sequelize.define("Alexandria", {
   year: { type: DataTypes.INTEGER },
   genre: { type: DataTypes.STRING },
   rating: { type: DataTypes.INTEGER },
-  synopsis: { type: DataTypes.INTEGER },
+  synopsis: { type: DataTypes.STRING },
 });
 
 module.exports = Book;
